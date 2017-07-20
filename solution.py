@@ -30,10 +30,11 @@ def naked_twins(values):
     # Find all instances of naked twins
     # Eliminate the naked twins as possibilities for their peers
     for unit in unitlist:
+        # only keep the box with 2 values for further processing
         twins_box = [values[box] for box in unit if len(values[box])==2]
         for value in twins_box:
             if twins_box.count(value) == 2:
-                # found a naked twins, remove all elment in twins in this unit
+                # found a naked twins, remove all elements in twins in this unit
                 for box in unit:
                     if values[box] != value:
                         for digit in value:
